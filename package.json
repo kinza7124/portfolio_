@@ -9,11 +9,11 @@
     "lint": "eslint ."
   },
   "author": {
-    "name": "Kinza Afzal",
-    "email": "kinzaafzal07122004@gmail.com",
-    "url": "https://github.com/kinza7124"
+    "name": "Sanidhya Kumar Verma",
+    "email": "sanidhya.verma12345@gmail.com",
+    "url": "https://github.com/sanidhyy"
   },
-  "description": "Engineering Intelligence with Logic & AI - Portfolio showcasing AI/ML projects and full-stack development expertise.",
+  "description": "Welcome to my full stack Next.js 14 space portfolio.",
   "keywords": [
     "reactjs",
     "nextjs",
@@ -70,21 +70,20 @@
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.34.2",
+    "framer-motion": "^12.34.3",
     "next": "16.1.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.0.1",
-    "react-intersection-observer": "^10.0.2",
-    "sharp": "^0.34.5",
+    "react-intersection-observer": "^10.0.3",
     "tailwind-merge": "^3.5.0",
-    "three": "^0.183.0"
+    "three": "^0.183.1"
   },
   "devDependencies": {
     "@types/node": "^25",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "autoprefixer": "^10.4.24",
+    "autoprefixer": "^10.4.27",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.1.6",
     "postcss": "^8",
