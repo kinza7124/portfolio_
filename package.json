@@ -9,11 +9,11 @@
     "lint": "eslint ."
   },
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "Kinza Afzal",
+    "email": "kinzaafzal07122004@gmail.com",
+    "url": "https://github.com/kinza7124"
   },
-  "description": "Welcome to my full stack Next.js 14 space portfolio.",
+  "description": "Engineering Intelligence with Logic & AI - Portfolio showcasing AI/ML projects and full-stack development expertise.",
   "keywords": [
     "reactjs",
     "nextjs",
@@ -76,6 +76,7 @@
     "react-dom": "19.2.4",
     "react-icons": "^5.0.1",
     "react-intersection-observer": "^10.0.2",
+    "sharp": "^0.34.5",
     "tailwind-merge": "^3.5.0",
     "three": "^0.183.0"
   },

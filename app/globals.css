@@ -66,3 +66,35 @@
 html {
   scroll-behavior: smooth;
 }
+/* Custom scrollbar styling */
+.scrollbar-style {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.scrollbar-style::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar-style::-webkit-scrollbar-track {
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #a855f7 0%, #06b6d4 100%);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c084fc 0%, #22d3ee 100%);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+}
+
+/* Firefox scrollbar */
+.scrollbar-style {
+  scrollbar-color: #a855f7 rgba(59, 130, 246, 0.05);
+  scrollbar-width: thin;
+}

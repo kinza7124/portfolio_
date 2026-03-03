@@ -24,7 +24,7 @@ export const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
+           AI/ML Enthusiast
           </h1>
         </motion.div>
 
@@ -33,11 +33,10 @@ export const HeroContent = () => {
           className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Providing{" "}
+            Kinza{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              the best
-            </span>{" "}
-            project experience.
+              Afzal
+            </span>
           </span>
         </motion.div>
 
@@ -45,8 +44,14 @@ export const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
+          Karachi • +92 3242217127 • kinzaafzal07122004@gmail.com
+        </motion.p>
+
+        <motion.p
+          variants={slideInFromLeft(0.9)}
+          className="text-base text-gray-300 my-3 max-w-[600px] leading-relaxed"
+        >
+          AI/ML enthusiast with hands-on experience in Machine Learning, Deep Learning, and AI systems. Passionate about contributing to innovative projects through data-driven modeling and problem-solving.
         </motion.p>
 
         <motion.a
