@@ -53,7 +53,9 @@ space-portfolio/
     |-- icon1.png
     |-- icon2.png
     |-- layout.tsx
+    |-- netlabpro.png
     |-- page.tsx
+  |- assets/
   |- components/
     |-- main/
     |-- sub/
