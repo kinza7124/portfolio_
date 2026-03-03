@@ -42,7 +42,7 @@ export const Leadership = () => {
               <p className="text-gray-400 text-sm italic border-l-2 border-purple-500 pl-4 mb-3">
                 {item.achievement}
               </p>
-              {item.links && item.links.length > 0 && (
+              {("links" in item) && item.links.length > 0 && (
                 <div className="flex flex-wrap gap-3">
                   {item.links.map((link) => (
                     <a
