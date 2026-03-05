@@ -71,18 +71,18 @@ export const Education = () => {
   return (
     <section
       id="education"
-      className="flex flex-col items-center justify-center py-20"
+      className="flex flex-col items-center justify-center py-16 sm:py-20"
     >
       <motion.h1
         variants={slideInFromLeft(0.5)}
         initial="hidden"
         animate="visible"
-        className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20"
+        className="bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text px-4 py-10 text-center text-3xl font-semibold text-transparent sm:py-14 sm:text-4xl"
       >
         Education
       </motion.h1>
 
-      <div className="w-full px-10 max-w-5xl">
+      <div className="w-full max-w-5xl px-4 sm:px-6 md:px-10">
         <div className="space-y-8">
           {EDUCATION_DATA.map((edu, index) => (
             <motion.div
@@ -90,7 +90,7 @@ export const Education = () => {
               variants={slideInFromRight(0.5 + index * 0.1)}
               initial="hidden"
               animate="visible"
-              className="border border-[#7042f88b] rounded-lg p-6 bg-gradient-to-br from-[rgba(70,30,120,0.2)] to-[rgba(0,180,220,0.1)] hover:shadow-[0_0_20px_rgba(180,155,255,0.3)] transition-all duration-300"
+              className="rounded-lg border border-[#7042f88b] bg-gradient-to-br from-[rgba(70,30,120,0.2)] to-[rgba(0,180,220,0.1)] p-4 transition-all duration-300 hover:shadow-[0_0_20px_rgba(180,155,255,0.3)] sm:p-6"
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                 <div>

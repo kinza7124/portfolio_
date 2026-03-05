@@ -11,7 +11,7 @@ export const Encryption = () => {
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
-          className="text-[40px] font-medium text-center text-gray-200"
+          className="px-4 text-center text-3xl font-medium text-gray-200 sm:text-4xl"
         >
           Education{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
@@ -44,8 +44,8 @@ export const Encryption = () => {
         </div>
       </div>
 
-      <div className="absolute z-[20] bottom-[10px] px-[5px]">
-        <div className="cursive text-[20px] font-medium text-center text-gray-300">
+      <div className="absolute bottom-[10px] z-[20] px-4">
+        <div className="cursive text-center text-base font-medium text-gray-300 sm:text-xl">
           BCS from FAST NUCES, Karachi • GPA: 3.91/4.00 • 2023-2027
         </div>
       </div>

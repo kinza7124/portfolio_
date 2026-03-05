@@ -19,14 +19,14 @@ export const ProjectCard = ({
       href={link}
       target="_blank"
       rel="noreferrer noopener"
-      className="flex-shrink-0 w-[350px] rounded-lg shadow-lg border border-[#7042f88b] hover:border-[#b49bff] transition-all duration-300 overflow-hidden hover:shadow-[0_0_20px_rgba(180,155,255,0.5)]"
+      className="w-full max-w-[380px] flex-shrink-0 overflow-hidden rounded-lg border border-[#7042f88b] shadow-lg transition-all duration-300 hover:border-[#b49bff] hover:shadow-[0_0_20px_rgba(180,155,255,0.5)]"
     >
       <Image
         src={src}
         alt={title}
         width={400}
         height={250}
-        className="w-full h-[200px] object-cover"
+        className="h-48 w-full object-cover sm:h-[200px]"
       />
 
       <div className="p-5 bg-gradient-to-b from-[rgba(70,30,120,0.4)] to-[rgba(3,0,20,0.6)]">

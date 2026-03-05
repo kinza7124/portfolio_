@@ -1,38 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProjectCard } from "@/components/sub/project-card";
 import { PROJECTS } from "@/constants";
 
 export const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
-  // Show 3 cards on desktop, 1 on mobile
-  const cardsToShow = typeof window !== "undefined" && window.innerWidth < 768 ? 1 : 3;
+  const [cardsToShow, setCardsToShow] = useState(1);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    const updateCardsToShow = () => setCardsToShow(mediaQuery.matches ? 3 : 1);
+
+    updateCardsToShow();
+    mediaQuery.addEventListener("change", updateCardsToShow);
+
+    return () => mediaQuery.removeEventListener("change", updateCardsToShow);
+  }, []);
+
   const maxIndex = Math.max(0, PROJECTS.length - cardsToShow);
+  const effectiveIndex = currentIndex > maxIndex ? 0 : currentIndex;
 
   const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+    setCurrentIndex((prev) => {
+      const safePrev = Math.min(prev, maxIndex);
+      return safePrev === 0 ? maxIndex : safePrev - 1;
+    });
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
+    setCurrentIndex((prev) => {
+      const safePrev = Math.min(prev, maxIndex);
+      return safePrev === maxIndex ? 0 : safePrev + 1;
+    });
   };
 
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20"
+      className="flex flex-col items-center justify-center py-16 sm:py-20"
     >
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
+      <h1 className="bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text py-10 text-center text-3xl font-semibold text-transparent sm:py-14 sm:text-4xl">
         My Projects
       </h1>
       
-      <div className="w-full px-4 md:px-20 flex items-center justify-center gap-4 md:gap-8">
+      <div className="flex w-full items-center justify-center gap-2 px-3 sm:gap-4 sm:px-4 md:gap-8 md:px-20">
         {/* Left Navigation Button */}
         <button
           onClick={handlePrevious}
-          className="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 hover:border-purple-500/60 hover:from-purple-500/30 hover:to-cyan-500/30 transition-all duration-300 backdrop-blur-md hover:scale-110 active:scale-95"
+          className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border border-purple-500/30 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-purple-500/60 hover:from-purple-500/30 hover:to-cyan-500/30 active:scale-95 sm:h-12 sm:w-12"
           aria-label="Previous projects"
         >
           <svg
@@ -54,13 +70,13 @@ export const Projects = () => {
         <div className="w-full overflow-hidden rounded-lg">
           <div className="flex transition-transform duration-500 ease-out"
             style={{
-              transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)`,
+              transform: `translateX(-${effectiveIndex * (100 / cardsToShow)}%)`,
             }}
           >
             {PROJECTS.map((project) => (
               <div
                 key={project.title}
-                className="w-full md:w-1/3 flex-shrink-0 px-2 md:px-4"
+                className="w-full flex-shrink-0 px-2 md:w-1/3 md:px-4"
               >
                 <ProjectCard
                   src={project.image}
@@ -76,7 +92,7 @@ export const Projects = () => {
         {/* Right Navigation Button */}
         <button
           onClick={handleNext}
-          className="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 hover:border-purple-500/60 hover:from-purple-500/30 hover:to-cyan-500/30 transition-all duration-300 backdrop-blur-md hover:scale-110 active:scale-95"
+          className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg border border-purple-500/30 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-purple-500/60 hover:from-purple-500/30 hover:to-cyan-500/30 active:scale-95 sm:h-12 sm:w-12"
           aria-label="Next projects"
         >
           <svg
@@ -102,7 +118,7 @@ export const Projects = () => {
             key={idx}
             onClick={() => setCurrentIndex(idx)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              idx === currentIndex
+              idx === effectiveIndex
                 ? "w-8 bg-gradient-to-r from-purple-500 to-cyan-500"
                 : "w-2 bg-purple-500/30 hover:bg-purple-500/60"
             }`}
